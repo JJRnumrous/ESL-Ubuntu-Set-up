@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=QGroundControl
+Comment=QGroundControl UAV Software
+Exec=/home/jjr/DataFiles/Software/QGroundControl/QGroundControl.AppImage
+Icon=/home/jjr/DataFiles/Software/QGroundControl/qgc.png
+Terminal=false
+Type=Application
+Categories=UAV;GroundControl;Utility;

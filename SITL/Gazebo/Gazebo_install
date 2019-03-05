@@ -1,0 +1,25 @@
+(http://gazebosim.org/tutorials?tut=install_ubuntu)
+
+Install:
+	curl -ssL http://get.gazebosim.org | sh
+then run:
+	sudo apt install gazebo7
+
+
+Setup your computer to accept software from packages.osrfoundation.org.:
+	sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+	wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+	sudo apt-get update
+	sudo apt-get install build-essential cmake git libboost-all-dev mercurial libcegui-mk2-dev libopenal-dev libswscale-dev libavformat-dev libavcodec-dev  libltdl3-dev libqwt-dev ruby libusb-1.0-0-dev libbullet-dev libhdf5-dev libgraphviz-dev libgdal-dev
+
+Instal dependencies:
+	wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
+	ROS_DISTRO=dummy . /tmp/dependencies.sh
+	sudo apt-get install $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES)
+
+remove old gazebo versions:
+	sudo apt-get remove '.*gazebo.*' '.*sdformat.*' '.*ignition-math.*'
+
+Make a gazebo workspace:
+	mkdir ~/gazebo_ws
+	cd gazebo_ws/

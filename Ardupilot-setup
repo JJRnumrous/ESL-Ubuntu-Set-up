@@ -1,0 +1,70 @@
+Building Ardupilot
+
+/ArduPilot/ :
+	- ./waf configure --board px4-v4
+				  sitl
+				  sitl --debug
+	- ./waf copter
+	- ./waf clean 			%keeps configuration
+	- ./waf distclean 		%cleans everything
+	- ./waf --targets bin/arducopter --upload
+
+SIMULATING ARDUPILOT
+
+/ArduPilot/ArduCopter/
+	sim_vehicle.py -w
+		=> then kill (ctrl c)
+	sim_vehicle.py --console --map --aircraft test
+
+
+FLIGHTGEAR
+	bash DataFiles/Development/ArduPilot/Tools/autotest/fg_quad_view.sh
+	sim_vehicle.py -L KSFO
+
+
+Load mission:
+	wp load ../Tools/autotest/ArduPlane-Missions/CMAC-toff-loop.txt
+
+arm throttle
+mode auto
+
+gtakeoff		|
+takeoff 40 		| takeoff and show graph
+
+
+
+MORE INFO
+
+					| $HOME/DataFiles/Development/ArduPilot/build/sitl/bin
+	sim_vehicle.py --model gazebo	| arducopter -M gazebo
+					| mavproxy.py --master tcp:127.0.0.1:5760
+-
+			| simout 9003
+	sitl simulator 	|
+			| simin  9002
+
+
+SEND:
+	-time			(s)
+	-angular velocity 	(rad/s) (body coordinates)
+	-linear velocity 	(m/s) 	(NED_dot)
+	-linear acceleration 	(m/s^2) (body coordinates) <= IMU
+	-orientation 			(norm quaternion) (NED -> body)
+	-position 		(m) 	(NED)
+
+RECEIVE:
+	-16 values of servo demands
+
+param load ~/DataFiles/Development/ArduPilot/Tools/Frame_param/intel-aero-rtf.param
+param load ../Tools/autotest/default_params/copter.parm
+param load ../Tools/Frame_params/intel-aero-rtf.param
+param save ./myparams.parm
+
+
+
+
+
+
+usr/share/games/flightgear
+
+

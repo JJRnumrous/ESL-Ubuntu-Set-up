@@ -1,0 +1,25 @@
+Bitbucket Ubuntu:
+
+For matlab code (Slade_model and Ardupilot)
+Part of meng_thesis
+[~/Documents/Everything/Meng_thesis/]
+
+git pull
+git add *
+git commit -m "message"
+git push origin master
+
+
+
+
+
+Ardupilot C++ code:
+[~Datafiles/Developement/Ardupilot/]
+Github fork but pushed to bitbucket.
+
+git pull
+git add *
+git commit -m "message"
+git push bitbucket master
+
+

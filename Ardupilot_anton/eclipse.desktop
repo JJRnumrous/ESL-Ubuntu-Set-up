@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Eclipse
+Comment=Eclipse Oxygen
+Exec=/home/jjr/DataFiles/Software/Eclipse/eclipse
+Icon=/home/jjr/DataFiles/Software/Eclipse/icon.xpm
+Terminal=false
+Type=Application
+Categories=Development;

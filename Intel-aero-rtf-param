@@ -1,0 +1,32 @@
+Max lean angle 		===    30	degrees
+Max acc in yaw-axis 	===   200 	degrees/s^2
+Max acc in rol-axis	=== 2 100 	degrees/s^2
+Max acc in pitch-ax	===   600	degrees/s^2
+
+K_phi_P 		=== 12
+K_theta_P		=== 5.3
+K_psi_P			=== 6.0
+
+K_P_P			=== 0.109 *0.005
+K_P_I			=== 0.109 *0.01
+K_P_D			=== 0.001 *0.001
+K_P_I-max		=== 0.444 -> 44.4% of max motor output
+
+K_Q_P			=== 0.13 *0.005
+K_Q_I			=== 0.13 *0.01
+K_Q_D			=== 0.0017 *0.001
+K_Q_I-max		=== 0.444 -> 44.4% of max motor output
+
+K_R_P			=== 0
+K_R_I			=== 0
+K_R_D			=== 0
+K_R_P-max		=== ?
+
+MOtor max volt 		=== 12.6
+Motor min volt 		=== 10.5
+Motor hover thrust	=== 0.35 ->35%?
+
+Horizontal acc 		=== 25 m/s^2
+Vertical acc		=== 10 m/s^2
+
+
